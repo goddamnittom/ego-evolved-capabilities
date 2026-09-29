@@ -1,0 +1,18 @@
+name: pass3-flatten
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  flatten:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/pass3_flatten.sh
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo nothing; exit 0; fi
+          git commit -m "pass3: flatten package/name/name.py to package/name.py"
+          git push

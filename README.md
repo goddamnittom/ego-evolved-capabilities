@@ -1,20 +1,18 @@
 # Ego evolved capabilities
 
-Folded layout after pass 2.
+Flattened packages after pass 3.
 
 ## Layout
 
 - `engines/` — IOAI, MoA, coder daemons, orchestrators, bridges
-- `cognitive/` — monitors, synthesizers, strategic/tactical reasoning
-- `adversarial/` — red team, attack surface, evidence, threat
-- `hardening/` — hardening, IR, security remediation
-- `memory/` — dreaming/hyper memory, temporal graph
-- `docs/` — mission notes and proposals
-- `ego_evolution_report.md` — 2026 audit
-
-Import path example:
+- `cognitive/` — monitors, synthesizers, strategy
+- `adversarial/` — red team, evidence, threat
+- `hardening/` — hardening, IR, security
+- `memory/` — dreaming / hyper memory, temporal graph
+- `docs/` — mission notes
+- `ego_evolution_report.md`
 
 ```python
-from engines.ioai_protocol.ioai_protocol import IoAIAgent
-from cognitive.cognitive_entropy_monitor.cognitive_entropy_monitor import CognitiveEntropyMonitor
+from engines.ioai_protocol import IoAIAgent
+from cognitive.cognitive_entropy_monitor import CognitiveEntropyMonitor
 ```
