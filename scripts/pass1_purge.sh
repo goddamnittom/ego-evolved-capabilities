@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Finish pass 1 in one commit. Run from repo root.
-set -euo pipefail
+set -eu
 
 STUBS=(
   axiomatic_stress_simulator
@@ -40,10 +39,5 @@ for d in "${STUBS[@]}"; do
   rm -rf "$d"
 done
 
-# generated per-module READMEs; keep root README.md
 find . -mindepth 2 -type f -name README.md -delete
-
-git add -A
-git status --short | head
-echo
-echo "Review, then: git commit -m 'pass1: remove stubs and generated READMEs' && git push"
+exit 0
